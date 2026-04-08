@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Masters Prep — English Conversation Course</title> 
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+<style> 
+/* ─── RESET & BASE ─────────────────────────────────── */ 
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; } html { scroll-behavior:smooth; font-size:16px; } 
+:root { 
+–bg: #faf7f2; 
+–surface: #ffffff; 
+–ink: #1c1a16; 
+–ink2: #4a4538; 
+–muted: #9a9080; 
+–border: rgba(60,50,30,0.10); 
+–teal: #1e6b6b; 
+–teal-lt: #e6f2f2; 
+–gold: #b8843a; 
+–gold-lt: #fdf3e3; 
+–rose: #8c4a4a; 
+–rose-lt: #fdf0f0; 
+–violet: #4a4080; 
+–violet-lt:#f0eefa; 
+–sage: #3a6040; 
+–sage-lt: #eef4ee; 
+–tag-h: 18px; –r: 10px; 
+–shadow: 0 2px 16px rgba(28,26,22,0.07); 
+–shadow-lg:0 8px 40px rgba(28,26,22,0.12); 
+} 
+
+body { 
+background: var(–bg); 
+color: var(–ink); 
+font-family: ‘Outfit’, sans-serif; 
+font-weight: 400; 
+line-height: 1.6; 
+min-height: 100vh; 
+} 
+
+/* ─── HEADER ───────────────────────────────────────── */ 
+.site-header { 
+background: var(–ink); 
+color: var(–bg); 
+padding: 0 clamp(20px, 5vw, 80px); 
+position: sticky; 
+top: 0; z-index: 100; 
+height: 56px; 
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+border-bottom: 1px solid rgba(255,255,255,0.08); 
+} 
+
+.site-logo { 
+font-family: ‘Lora’, serif; 
+font-style: italic; 
+font-size: 17px; 
+color: var(–bg); 
+letter-spacing: 0.2px; 
+} 
+
+.site-logo span { 
+color: #c9a860; 
+} 
+
+.progress-indicator { 
+display: flex; 
+align-items: center; 
+gap: 10px; font-size: 12px; 
+color: rgba(250,247,242,0.55); 
+font-weight: 300; 
+} 
+
+.progress-bar-wrap { 
+width: 80px; height: 3px; 
+background: rgba(255,255,255,0.12); 
+border-radius: 2px; overflow: hidden; 
+} 
+
+.progress-bar-fill { 
+height: 100%; 
+background: #c9a860; 
+border-radius: 2px; 
+transition: width 0.4s ease; 
+width: 0%; 
+} 
+#progress-text { color: #c9a860; font-weight: 500; } 
+
+/* ─── HERO ─────────────────────────────────────────── */ 
+
+.hero { 
+padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 80px) clamp(40px, 6vw, 72px); 
+max-width: 860px; 
+} 
+
+.hero-eyebrow { 
+font-size: 11px; 
+letter-spacing: 3px; 
+text-transform: uppercase; 
+color: var(–gold); 
+font-weight: 600; 
+margin-bottom: 20px; 
+} 
+
+.hero h1 { 
+font-family: ‘Lora’, serif; 
+font-size: clamp(32px, 5.5vw, 58px); 
+font-weight: 700; 
+line-height: 1.12; 
+margin-bottom: 20px; 
+color: var(–ink); 
+} 
+
+.hero h1 em { 
+
+font-style: italic; 
+color: var(–teal); 
+} 
+
+.hero-sub { 
+font-size: clamp(15px, 2vw, 17px); 
+color: var(–ink2); 
+max-width: 560px; 
+margin-bottom: 36px; 
+font-weight: 300; 
+line-height: 1.7; 
+} 
+
+.hero-meta { 
+display: flex; 
+flex-wrap: wrap; 
+gap: 10px; 
+} 
+
+.meta-chip { 
+display: inline-flex; 
+align-items: center; 
+gap: 7px; 
+padding: 7px 14px; 
+background: var(–surface); 
+border: 1px solid var(–border); 
+border-radius: 100px; 
+font-size: 13px; 
+color: var(–ink2); 
+font-weight: 400; 
+} 
+
+.meta-chip .dot { 
+width: 6px; height: 6px; 
+border-radius: 50%; 
+background: var(–teal); 
+flex-shrink: 0; 
+} 
+
+
+/* ─── GOALS BAR ────────────────────────────────────── */ 
+
+.goals-bar { 
+background: var(–teal); 
+padding: 20px clamp(20px, 5vw, 80px); 
+display: flex; 
+flex-wrap: wrap; gap: 8px; 
+} 
+
+.goal-badge { 
+display: inline-flex; 
+align-items: center; 
+gap: 8px; padding: 7px 16px; 
+background: rgba(255,255,255,0.1); 
+border-radius: 100px; font-size: 13px; 
+color: rgba(255,255,255,0.9); font-weight: 400; 
+border: 1px solid rgba(255,255,255,0.15); 
+} 
+
+.goal-badge .gi { 
+font-size: 14px; 
+} 
+
+
+/* ─── PHASE NAV ────────────────────────────────────── */ 
+
+.phase-nav { 
+padding: 32px clamp(20px, 5vw, 80px) 0; 
+display: flex; 
+gap: 8px; 
+flex-wrap: wrap; 
+} 
+
+
+.phase-btn { 
+padding: 8px 18px; 
+border-radius: 100px; 
+font-size: 13px; 
+font-family: ‘Outfit’, sans-serif; 
+font-weight: 500; 
+cursor: pointer; 
+border: 1.5px solid var(–border); 
+background: var(–surface); 
+color: var(–ink2); 
+transition: all 0.18s; 
+} 
+
+.phase-btn:hover, .phase-btn.active { 
+background: var(–ink); 
+color: var(–bg); 
+border-color: var(–ink); 
+} 
+
+/* ─── MAIN LAYOUT ──────────────────────────────────── */ 
+
+.main-wrap { 
+padding: 32px clamp(20px, 5vw, 80px) 80px; 
+} 
+
+/* ─── PHASE BLOCK ──────────────────────────────────── */ 
+
+.phase-block { 
+margin-bottom: 56px; 
+} 
+
+.phase-block.hidden { 
+display: none; 
+} 
+
+.phase-heading { 
+display: flex; 
+align-items: flex-start; 
+gap: 16px; 
+margin-bottom: 24px; 
+padding-bottom: 20px; 
+border-bottom: 1.5px solid var(–border); 
+} 
+
+.phase-num-badge { 
+width: 48px; 
+height: 48px; 
+background: var(–ink); 
+color: #c9a860; 
+border-radius: 50%; 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+font-family: ‘Lora’, serif; 
+font-size: 20px; 
+font-weight: 700; 
+flex-shrink: 0; 
+margin-top: 2px; 
+} 
+
+.phase-title-wrap {
+} 
+
+.phase-title { 
+font-family: ‘Lora’, serif; 
+font-size: clamp(18px, 3vw, 23px); 
+font-weight: 700; 
+color: var(–ink); 
+margin-bottom: 3px; 
+} 
+
+.phase-sub { 
+font-size: 13.5px; 
+color: var(–muted); 
+font-weight: 300; 
+} 
+
+
+.phase-sess-count { 
+margin-left: auto; 
+font-size: 11px; 
+letter-spacing: 2px; 
+text-transform: uppercase; 
+color: var(–teal); 
+font-weight: 600; 
+padding-top: 4px; 
+white-space: nowrap; 
+} 
+
+
+/* ─── SESSION GRID ─────────────────────────────────── */ 
+
+.sessions-grid { 
+display: grid; 
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+gap: 16px; 
+} 
+
+
+/* ─── SESSION CARD ─────────────────────────────────── */ 
+
+.s-card { 
+background: var(–surface); 
+border-radius: var(–r); 
+border: 1px solid var(–border); 
+overflow: hidden; 
+transition: box-shadow 0.2s, transform 0.2s; 
+cursor: pointer; position: relative; 
+} 
+
+.s-card:hover { 
+box-shadow: var(–shadow-lg); 
+transform: translateY(-2px); 
+} 
+
+.s-card.done { 
+opacity: 0.7; 
+} 
+
+.s-card.done::after { 
+content: ‘✓’; position: absolute; top: 14px; 
+right: 14px; width: 24px; 
+height: 24px; 
+border-radius: 50%; 
+background: var(–sage); 
+color: white; 
+font-size: 12px; 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+font-weight: 700; 
+} 
+
+.card-top { 
+padding: 20px 20px 0; 
+} 
+
+.card-meta-row { 
+
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+margin-bottom: 12px; 
+} 
+
+.sess-num { font
+-size: 10.5px; 
+letter-spacing: 2px; 
+text-transform: uppercase; 
+color: var(–muted); 
+font-weight: 600; 
+} 
+
+.sess-tag { 
+font-size: 10.5px; 
+padding: 3px 10px; 
+border-radius: 100px; 
+font-weight: 600; 
+letter-spacing: 0.3px; 
+} 
+
+.tag-diagnostic { 
+background: #f0ece0; 
+color: #7a601a; 
+} 
+
+.tag-social { 
+background: var(–rose-lt); 
+color: var(–rose); 
+} 
+
+.tag-academic { 
+background: var(–teal-lt); 
+color: var(–teal); 
+} 
+
+.tag-presentation{ 
+background: var(–gold-lt); 
+color: var(–gold); 
+} 
+
+.tag-thesis { 
+background: var(–violet-lt); 
+color: var(–violet); 
+} 
+
+.tag-networking { 
+background: var(–sage-lt); 
+color: var(–sage); 
+} 
+
+.tag-review { 
+background: #f0ece0; color: #5a4a20; 
+} 
+
+.tag-integration {
+background: #f0ecf8; 
+color: #5a4080; 
+} 
+
+.tag-graduation { 
+background: #e8f4e8; 
+color: #306030; 
+} 
+
+.card-title { 
+font-family: ‘Lora’, serif; 
+font-size: 17px; 
+font-weight: 700; 
+line-height: 1.3; 
+color: var(–ink); 
+margin-bottom: 8px; 
+} 
+
+.card-focus { 
+font-size: 
+13.5px; 
+color: var(–ink2); 
+font-weight: 300; 
+line-height: 1.55; 
+margin-bottom: 16px; 
+} 
+
+/* ─── EXPAND/COLLAPSE ──────────────────────────────── */ 
+
+.card-toggle { 
+width: 100%; 
+padding: 10px 20px; 
+background: var(–bg); 
+border: none; 
+border-top: 1px solid var(–border); 
+font-family: ‘Outfit’, sans-serif; 
+font-size: 12px; 
+color: var(–muted); 
+cursor: pointer; 
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+font-weight: 500; 
+transition: background 0.15s; 
+letter-spacing: 0.5px; 
+} 
+
+
+.card-toggle:hover { 
+background: #f0ece0; 
+color: var(–ink2); 
+} 
+
+.toggle-arrow { 
+transition: transform 0.25s; 
+font-size: 10px; 
+} 
+
+.card-toggle.open .toggle-arrow { 
+transform: rotate(180deg); 
+} 
+
+.card-detail { 
+overflow: hidden; 
+max-height: 0; 
+transition: max-height 0.35s ease; 
+} 
+
+.card-detail.open { 
+max-height: 800px; 
+} 
+
+.detail-inner { 
+padding: 20px; 
+border-top: 1px solid var(–border); 
+} 
+
+/* ─── TIMELINE ─────────────────────────────────────── */ 
+
+.timeline { 
+display: flex; 
+flex-direction: column; 
+gap: 8px; 
+margin-bottom: 16px; 
+} 
+
+.tl-item { 
+display: flex; 
+gap: 12px; 
+align-items: flex-start; 
+font-size: 13px; 
+} 
+
+.tl-time { 
+font-size: 10px; 
+font-weight: 600; 
+letter-spacing: 1px; 
+color: var(–gold); 
+min-width: 32px; 
+padding-top: 1px; 
+} 
+
+.tl-text { 
+color: var(–ink2); 
+line-height: 1.45; 
+} 
+
+
+/* ─── SKILL TAGS ───────────────────────────────────── */ 
+
+
+.skill-tags { 
+display: flex; 
+flex-wrap: wrap; 
+gap: 6px; 
+padding-top: 12px; 
+border-top: 1px solid var(–border); 
+} 
+
+.skill-tag { 
+font-size: 11px; 
+padding: 3px 9px; 
+background: var(–bg); 
+border: 1px solid var(–border); 
+border-radius: 4px; 
+color: var(–muted); 
+font-weight: 400; 
+} 
+
+/* ─── MARK DONE BUTTON ─────────────────────────────── */ 
+
+.mark-done-btn { 
+margin-top: 14px; 
+width: 100%; 
+padding: 9px; 
+border-radius: 6px; 
+border: 1.5px solid var(–border); 
+background: transparent; 
+font-family: ‘Outfit’, sans-serif; 
+font-size: 12.5px; 
+font-weight: 500; 
+color: var(–ink2); 
+cursor: pointer; 
+transition: all 0.18s; 
+letter-spacing: 0.3px; 
+} 
+
+.mark-done-btn:hover { 
+background: var(–sage-lt); 
+border-color: var(–sage); 
+color: var(–sage); 
+} 
+
+.mark-done-btn.done-state { 
+background: var(–sage-lt); 
+border-color: var(–sage); 
+color: var(–sage); 
+} 
+
+/* ─── TUTOR NOTE ───────────────────────────────────── */ 
+
+.tutor-note { 
+margin: 0 clamp(20px, 5vw, 80px) 56px; 
+padding: 28px 32px; 
+background: var(–ink); 
+border-radius: var(–r); 
+display: flex; gap: 20px; 
+align-items: flex-start; 
+} 
+
+.tn-icon { 
+font-size: 22px; 
+flex-shrink: 0; 
+margin-top: 2px; 
+} 
+
+.tn-body {
+} 
+
+.tn-title { 
+font-family: ‘Lora’, serif; 
+font-size: 15px; 
+color: #c9a860; 
+margin-bottom: 8px; 
+font-style: italic; 
+} 
+
+.tn-text { 
+font-size: 13.5px; 
+color: rgba(250,247,242,0.68); 
+line-height: 1.65; font-weight: 300; 
+} 
+
+.tn-text strong { 
+color: rgba(250,247,242,0.9); 
+font-weight: 500; 
+} 
+
+/* ─── FOOTER ───────────────────────────────────────── */ 
+
+.site-footer { 
+background: var(–surface); 
+border-top: 1px solid var(–border); 
+padding: 28px clamp(20px, 5vw, 80px); 
+display: flex; align-items: center; 
+justify-content: space-between; 
+flex-wrap: wrap; 
+gap: 12px; 
+} 
+
+
+.footer-credit { 
+font-size: 13px; 
+color: var(–muted); 
+font-weight: 300; 
+} 
+
+.footer-credit strong { 
+color: var(–ink2); 
+font-weight: 500; 
+} 
+
+.reset-btn { 
+font-size: 12px; 
+color: var(–muted); 
+background: none; 
+border: 1px solid var(–border); 
+border-radius: 100px; 
+padding: 5px 14px; 
+cursor: pointer; 
+font-family: ‘Outfit’, sans-serif; transition: all 0.15s; 
+} 
+
+.reset-btn:hover { 
+color: var(–rose); 
+border-color: var(–rose); 
+} 
+
+/* ─── RESPONSIVE ───────────────────────────────────── */ 
+
+@media (max-width: 600px) { 
+.phase-sess-count { 
+display: none; 
+} 
+.sessions-grid { 
+grid-template-columns: 1fr; 
+} 
+
+.tutor-note { 
+flex-direction: column; 
+gap: 12px; 
+} 
+
+.site-footer { 
+flex-direction: column; 
+align-items: flex-start; 
+} 
+
+} 
+
+/* ─── ANIMATIONS ───────────────────────────────────── */ 
+
+@keyframes fadeUp { 
+from { 
+opacity:0; 
+transform:translateY(16px); 
+} 
+to { 
+opacity:1; 
+transform:translateY(0); 
+} 
+
+} 
+
+.s-card { 
+animation: fadeUp 0.4s ease both; 
+} 
+</style> 
+</head> 
+<body> 
+<!-- STICKY HEADER --> 
+<header class="site-header"> 
+<div class="site-logo">Masters Prep <span>·</span> English</div> 
+<div class="progress-indicator"> 
+<div class="progress-bar-wrap"> 
+<div class="progress-bar-fill" id="progressBar">
+</div> 
+</div> 
+<span id="progress-text">0 / 19</span> 
+</div> </header> 
+<!-- HERO --> <section class="hero"> 
+<div class="hero-eyebrow">19-Session Programme · B2 Level</div> 
+<h1>Your Path to<br><em>Confident Academic English</em></h1> 
+<p class="hero-sub">A personal English conversation course designed to prepare you for postgraduate study in Australia — from seminar discussions to your thesis defense.</p> 
+<div class="hero-meta"> 
+<span class="meta-chip">
+<span class="dot">
+</span>19 sessions × 60 minutes</span> 
+<span class="meta-chip">
+<span class="dot" style="background:var(--gold)">
+</span>B2 Upper Intermediate</span> 
+<span class="meta-chip"><span class="dot" style="background:var(--rose)">
+</span>1-on-1 Tutoring</span> 
+<span class="meta-chip">
+<span class="dot" style="background:var(--violet)">
+</span>Australia Masters Prep</span> 
+</div> </section> 
+<!-- GOALS BAR --> 
+<div class="goals-bar"> 
+<div class="goal-badge">
+<span class="gi">🎓</span> Seminar &amp; Class Discussions</div> 
+<div class="goal-badge">
+<span class="gi">📝</span> Academic Writing &amp; Presentations</div> 
+<div class="goal-badge">
+<span class="gi">🤝</span> Networking &amp; Social English</div> 
+<div class="goal-badge">
+<span class="gi">💬</span> Thesis Defense &amp; Supervisor Meetings</div> 
+</div> <!-- PHASE FILTER NAV --> <nav class="phase-nav" id="phaseNav"> 
+<button class="phase-btn active" data-phase="all">All Sessions</button> 
+<button class="phase-btn" data-phase="1">I · Foundation</button> 
+<button class="phase-btn" data-phase="2">II · Academic Discourse</button> 
+<button class="phase-btn" data-phase="3">III · Presentations</button> 
+<button class="phase-btn" data-phase="4">IV · Thesis Defense</button> </nav> <!-- MAIN --> <main class="main-wrap"> 
+<!-- ══ PHASE 1 ══ --> <div class="phase-block" data-phase="1" id="phase1"> 
+<div class="phase-heading"> 
+<div class="phase-num-badge">I</div> 
+<div class="phase-title-wrap"> 
+<div class="phase-title">Foundation &amp; Self-Expression</div> 
+<div class="phase-sub">Build fluency, personal voice, and Australian English awareness</div> 
+</div> 
+<div class="phase-sess-count">Sessions 1–5</div> 
+</div> <div class="sessions-grid"> ``` <!-- S01 --> 
+<div class="s-card" data-session="1" style="animation-delay:0.05s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 01</span> 
+<span class="sess-tag tag-diagnostic">Diagnostic</span> 
+</div> 
+<div class="card-title">Who Are You in English?</div> 
+<div class="card-focus">Diagnostic conversation and goal-mapping. Identify fluency gaps, accent tendencies, and confidence triggers. Set the tone for the whole programme.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span>
+<span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item">
+<span class="tl-time">15'</span>
+<span class="tl-text">Warm-up: structured self-introduction roleplay — name, background, why this programme</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">20'</span><span class="tl-text">Open conversation: life, study background, expectations for Australia</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">15'</span><span class="tl-text">Tutor analysis: note hesitation patterns, filler words, grammar tendencies (no correction yet — just observe)</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">10'</span>
+<span class="tl-text">Co-create a personal goal map for sessions 1–19 based on what emerged</span>
+</div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Self-introduction</span> 
+<span class="skill-tag">Active listening</span> 
+<span class="skill-tag">Goal setting</span> 
+<span class="skill-tag">Fluency baseline</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 1)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S02 --> 
+<div class="s-card" data-session="2" style="animation-delay:0.10s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 02</span> 
+<span class="sess-tag tag-social">Social English</span> 
+</div> <div class="card-title">Australian English: Accent, Slang &amp; Culture</div> 
+<div class="card-focus">Reduce accent shock. Cover Australian pronunciation patterns, casual contractions, and cultural norms in academic settings so nothing catches you off guard.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item">
+<span class="tl-time">15'</span>
+<span class="tl-text">Listen &amp; repeat: Australian intonation, vowel shifts, and rising terminals</span></div> 
+<div class="tl-item">
+<span class="tl-time">20'</span>
+<span class="tl-text">Common Aussie academic expressions and what they actually mean in context</span>
+</div> 
+<div class="tl-item"><span class="tl-time">15'</span>
+<span class="tl-text">Cultural chat: university life, politeness norms, directness vs. formality</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">10'</span><span class="tl-text">Roleplay: first day at orientation — introduce yourself to two different people</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Pronunciation</span> 
+<span class="skill-tag">Cultural literacy</span> 
+<span class="skill-tag">Small talk</span> 
+<span class="skill-tag">Listening</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 2)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S03 --> 
+<div class="s-card" data-session="3" style="animation-delay:0.15s"> 
+<div class="card-top"> <div class="card-meta-row"> <span class="sess-num">Session 03</span> 
+<span class="sess-tag tag-social">Social English</span> 
+</div> 
+<div class="card-title">The Art of Small Talk</div> 
+<div class="card-focus">Master the unwritten rules of casual networking: how to start, sustain, and gracefully exit conversations without it feeling forced.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span>
+<span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">What topics are safe vs. risky in Australia — weather, sport, studies, weekend plans</span>
+</div> 
+<div class="tl-item"><span class="tl-time">20'</span>
+<span class="tl-text">Strategies: open-ended questions, conversational bridges, graceful exits ("I'll let you get back to…")</span></div> 
+<div class="tl-item">
+<span class="tl-time">20'</span>
+<span class="tl-text">Roleplay: coffee with a classmate, corridor chat after a lecture, waiting for the lift</span></div> 
+<div class="tl-item">
+<span class="tl-time">10'</span>
+<span class="tl-text">Debrief: what felt natural vs. scripted? Identify one thing to practise this week</span>
+</div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Conversation flow</span> 
+<span class="skill-tag">Active listening</span> 
+<span class="skill-tag">Register</span> <span class="skill-tag">Rapport-building</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 3)">Mark as completed</button> </div> 
+</div> 
+</div> 
+<!-- S04 --> 
+<div class="s-card" data-session="4" style="animation-delay:0.20s"> <div class="card-top"> 
+<div class="card-meta-row"> <span class="sess-num">Session 04</span> 
+<span class="sess-tag tag-academic">Academic</span> 
+</div> 
+<div class="card-title">Thinking Out Loud: Opinion &amp; Argument</div> 
+<div class="card-focus">Build confidence expressing opinions clearly and backing them up. This is the core skill that makes you visible and credible in any seminar.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span>
+<span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> <div class="tl-item">
+<span class="tl-time">15'</span>
+<span class="tl-text">Language frames: "I'd argue that…", "The evidence suggests…", "What's interesting here is…"</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">20'</span>
+<span class="tl-text">Low-stakes opinion debates: topics chosen for comfort, not difficulty — practice the structure</span>
+</div> 
+<div class="tl-item"><span class="tl-time">15'</span>
+<span class="tl-text">Agreeing and disagreeing politely in academic settings — hedging without losing your point</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span>
+<span class="tl-text">Mini-task: state a thesis on a given topic in 60 seconds — spoken, not written</span>
+</div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Argumentation</span> 
+<span class="skill-tag">Hedging language</span> 
+<span class="skill-tag">Discourse markers</span> 
+<span class="skill-tag">Confidence</span> 
+</div> <button class="mark-done-btn" onclick="markDone(this, 4)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S05 --> 
+<div class="s-card" data-session="5" style="animation-delay:0.25s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 05</span> 
+<span class="sess-tag tag-academic">Academic</span> 
+</div> 
+<div class="card-title">Reading the Room: Formality &amp; Register</div> 
+<div class="card-focus">Switch fluently between formal seminar English, casual peer talk, and professional email tone. One skill — three different voices.</div> </div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span>
+<span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item">
+<span class="tl-time">15'</span>
+<span class="tl-text">The register spectrum: from group chat message to thesis panel — what changes and why</span>
+</div> 
+<div class="tl-item">
+<span class="tl-time">20'</span><span class="tl-text">Rewrite exercises: casual → formal and formal → casual (same content, different audience)</span></div> 
+<div class="tl-item">
+<span class="tl-time">15'</span><span class="tl-text">Roleplay: explain the same idea to a friend, a classmate, and a professor</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Self-assessment: where do you naturally default and what triggers it?</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Code-switching</span> 
+<span class="skill-tag">Tone</span> 
+<span class="skill-tag">Audience awareness</span> <span class="skill-tag">Pragmatics</span> 
+</div> <button class="mark-done-btn" onclick="markDone(this, 5)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+</div> ``` </div> 
+<!-- ══ PHASE 2 ══ --> 
+<div class="phase-block" data-phase="2" id="phase2"> 
+<div class="phase-heading"> 
+<div class="phase-num-badge">II</div> 
+<div class="phase-title-wrap"> 
+<div class="phase-title">Academic Discourse &amp; Class Participation</div> 
+<div class="phase-sub">Navigate seminars, discussions, and academic debate with authority</div> 
+</div> 
+<div class="phase-sess-count">Sessions 6–10</div> 
+</div> 
+<div class="sessions-grid"> ``` <!-- S06 --> 
+<div class="s-card" data-session="6" style="animation-delay:0.05s"> 
+<div class="card-top"> <div class="card-meta-row"> 
+<span class="sess-num">Session 06</span> 
+<span class="sess-tag tag-academic">Academic</span> 
+</div> 
+<div class="card-title">Seminar Survival Kit</div> 
+<div class="card-focus">The unspoken rules of postgraduate seminars — when to speak, how to enter a discussion already in progress, and how to hold the floor once you have it.</div> </div> <button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> <div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Anatomy of a postgraduate seminar: roles, expectations, turn-taking norms</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Phrases for interrupting politely, agreeing with nuance, and building on others' ideas</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Simulated seminar discussion on a short article — tutor plays other participants</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Feedback: quality and relevance of contributions, not just how often you spoke</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Turn-taking</span> <span class="skill-tag">Interruption strategies</span> 
+<span class="skill-tag">Floor-holding</span> <span class="skill-tag">Academic discourse</span> </div> <button class="mark-done-btn" onclick="markDone(this, 6)">Mark as completed</button> </div> 
+</div> 
+</div> 
+<!-- S07 --> 
+<div class="s-card" data-session="7" style="animation-delay:0.10s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 07</span> <span class="sess-tag tag-academic">Academic</span> 
+</div> 
+<div class="card-title">Critical Thinking in Real Time</div> 
+<div class="card-focus">Respond to complex ideas quickly and coherently — the core skill of any seminar participant who wants to be taken seriously.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Buy-time phrases that sound natural: "That's a really interesting point — let me think about that…"</span></div> 
+<div class="tl-item"><span class="tl-time">25'</span><span class="tl-text">Read a short text → immediate spoken response: summarise + analyse + give your position</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Challenge-and-defend: tutor pushes back on your view — hold your ground or update it gracefully</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Debrief: what strategies help when your brain goes blank under pressure?</span></div> </div> <div class="skill-tags"> <span class="skill-tag">Critical analysis</span> <span class="skill-tag">Stalling strategies</span> <span class="skill-tag">Reasoning aloud</span> 
+<span class="skill-tag">Pressure handling</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 7)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S08 --> 
+<div class="s-card" data-session="8" style="animation-delay:0.15s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 08</span> 
+<span class="sess-tag tag-academic">Academic</span> 
+</div> 
+<div class="card-title">Academic Vocabulary in Context</div> 
+<div class="card-focus">Move beyond knowing words to using them naturally in spoken academic discourse. Knowing a word and owning it are two different things.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> </button> <div class="card-detail"> <div class="detail-inner"> <div class="timeline"> <div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Top academic word families for Masters-level discussion — with spoken examples, not definitions</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Collocations: which words live naturally together in academic speech (e.g., "draw a conclusion", not "make")</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Spot the difference: natural vs. unnatural academic phrases — discuss why each sounds right or wrong</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Apply: 90-second mini-presentation using at least 5 target words naturally</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Academic lexis</span> 
+<span class="skill-tag">Collocation</span> <span class="skill-tag">Naturalness</span> <span class="skill-tag">Word choice</span> </div> <button class="mark-done-btn" onclick="markDone(this, 8)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S09 --> 
+<div class="s-card" data-session="9" style="animation-delay:0.20s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 09</span> 
+<span class="sess-tag tag-presentation">Presentation</span> 
+</div> 
+<div class="card-title">Structuring Spoken Ideas</div> 
+<div class="card-focus">Learn to organise complex ideas verbally — signposting, chunking, and summarising so your listener can always follow where you're going.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> </button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Spoken structure vs. written structure — the key differences and why they matter</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Signposting language: "Firstly… What this means is… Moving on… To summarise what I've said…"</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Impromptu 3-minute talks on given topics — tutor coaches signposting in real time</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Practice using a peer feedback template to build self-assessment language</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Signposting</span> 
+<span class="skill-tag">Oral structure</span> 
+<span class="skill-tag">Coherence</span> 
+<span class="skill-tag">Chunking</span> 
+</div> <button class="mark-done-btn" onclick="markDone(this, 9)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S10 --> 
+<div class="s-card" data-session="10" style="animation-delay:0.25s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 10</span> 
+<span class="sess-tag tag-review">Mid-Point Review</span> 
+</div> 
+<div class="card-title">Checkpoint: Progress &amp; Pivot</div> 
+<div class="card-focus">Celebrate wins, identify remaining gaps, and recalibrate the second half of the programme. This session shapes everything that follows.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> <div class="card-detail"> 
+<div class="detail-inner"> <div class="timeline"> <div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Repeat the Session 01 self-introduction — compare it to your original recording</span></div> <div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Open discussion: what feels harder than expected? What surprised you?</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Tutor feedback report: 3 clear strengths, 2 patterns to address, 1 priority for the next 9 sessions</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Adjust sessions 11–19 together based on what's emerged — this is your programme</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Self-reflection</span> 
+<span class="skill-tag">Metacognition</span> 
+<span class="skill-tag">Goal revision</span> 
+<span class="skill-tag">Feedback literacy</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 10)">Mark as completed</button> </div> </div> 
+</div> 
+</div> ``` </div> 
+<!-- ══ PHASE 3 ══ --> 
+<div class="phase-block" data-phase="3" id="phase3"> 
+<div class="phase-heading"> <div class="phase-num-badge">III</div> 
+<div class="phase-title-wrap"> <div class="phase-title">Presentations &amp; Professional Communication</div> <div class="phase-sub">Command a room, handle Q&amp;A, and communicate like a Master's student</div> 
+</div> 
+<div class="phase-sess-count">Sessions 11–15</div> 
+</div> 
+<div class="sessions-grid"> ``` <!-- S11 --> 
+<div class="s-card" data-session="11" style="animation-delay:0.05s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 11</span> <span class="sess-tag tag-presentation">Presentation</span> 
+</div> 
+<div class="card-title">Presenting with Authority</div> 
+<div class="card-focus">Delivery skills that change how people perceive you: voice projection, pacing, the power of the pause, and eye contact that signals confidence.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Video analysis: watch two presenters and identify exactly what makes one more authoritative</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Drill: pace, pause, and emphasis — read aloud the same paragraph 3 different ways</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">5-minute presentation on a familiar topic, recorded — watch it back together</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Targeted debrief: one thing to implement immediately next session</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Delivery</span> 
+<span class="skill-tag">Prosody</span> 
+<span class="skill-tag">Body language</span> 
+<span class="skill-tag">Presence</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 11)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S12 --> 
+<div class="s-card" data-session="12" style="animation-delay:0.10s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 12</span> 
+<span class="sess-tag tag-presentation">Presentation</span> 
+</div> 
+<div class="card-title">Q&amp;A Without the Panic</div> 
+<div class="card-focus">Handle tough questions gracefully — including the ones you genuinely don't know the answer to. This is where confidence is really tested.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">The Q&amp;A mindset shift: it's a conversation, not an examination</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Strategies: clarifying questions you didn't fully understand, redirecting, admitting uncertainty with poise</span></div> <div class="tl-item"><span class="tl-time">25'</span><span class="tl-text">Hot seat roleplay: tutor fires progressively harder questions after a 3-minute presentation</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Debrief: which strategies worked? Build a personal Q&amp;A toolkit</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Q&amp;A strategies</span> 
+<span class="skill-tag">Uncertainty language</span> <span class="skill-tag">Composure</span> <span class="skill-tag">Clarifying</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 12)">Mark as completed</button> </div> 
+</div> 
+</div> 
+<!-- S13 --> 
+<div class="s-card" data-session="13" style="animation-delay:0.15s"> 
+<div class="card-top"> <div class="card-meta-row"> 
+<span class="sess-num">Session 13</span> <span class="sess-tag tag-networking">Networking</span> 
+</div> 
+<div class="card-title">Networking That Doesn't Feel Fake</div> 
+<div class="card-focus">Build authentic professional connections at conferences, departmental events, and with faculty — without it feeling like a performance.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Your academic elevator pitch — a natural 60-second version that sounds like you, not a LinkedIn bio</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Phrases for approaching strangers, keeping the conversation going, and following up afterward</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Roleplay: departmental welcome event — 3 different conversations with 3 different people</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Draft a follow-up email to someone you just met at the event</span></div> 
+</div> 
+<div class="skill-tags"> <span class="skill-tag">Elevator pitch</span> 
+<span class="skill-tag">Professional rapport</span> 
+<span class="skill-tag">Follow-up skills</span> <span class="skill-tag">Email writing</span> </div> 
+<button class="mark-done-btn" onclick="markDone(this, 13)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S14 --> 
+<div class="s-card" data-session="14" style="animation-delay:0.20s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 14</span> 
+<span class="sess-tag tag-academic">Academic Writing</span> 
+</div> 
+<div class="card-title">Talking About Your Writing</div> 
+<div class="card-focus">Bridge the gap between what you write and what you say. Being able to explain your own argument out loud is a skill many students never develop.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> </button> <div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Why researchers struggle to explain their own work simply — and why it matters that you can</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Summarising academic writing in plain, spoken English — without losing academic credibility</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Practice: explain a recent assignment, essay topic, or area of research interest aloud</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Vocabulary for research conversations: data, findings, limitations, implications, methodology</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Research language</span> <span class="skill-tag">Synthesis</span> 
+<span class="skill-tag">Clarity</span> <span class="skill-tag">Spoken academic</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 14)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S15 --> 
+<div class="s-card" data-session="15" style="animation-delay:0.25s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 15</span> 
+<span class="sess-tag tag-thesis">Thesis Prep</span> 
+</div> 
+<div class="card-title">Supervisor Meetings: Speaking Up</div> 
+<div class="card-focus">Communicate progress, concerns, and ideas to your supervisor without over-explaining, under-asserting, or going blank when it matters.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">The power dynamic — how to be direct and confident without coming across as rude or presumptuous</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Language for: reporting progress, flagging problems early, asking for guidance, pushing back respectfully</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Roleplay: monthly supervisor progress meeting — tutor plays a friendly but demanding supervisor</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Draft a pre-meeting email with a clear agenda — a habit that signals professionalism</span></div> 
+</div> 
+<div class="skill-tags"> <span class="skill-tag">Assertiveness</span> 
+<span class="skill-tag">Academic rapport</span> 
+<span class="skill-tag">Email writing</span> 
+<span class="skill-tag">Professional boundaries</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 15)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+</div> ``` </div> <!-- ══ PHASE 4 ══ --> 
+<div class="phase-block" data-phase="4" id="phase4"> 
+<div class="phase-heading"> 
+<div class="phase-num-badge">IV</div> 
+<div class="phase-title-wrap"> 
+<div class="phase-title">Thesis Defense &amp; Final Confidence</div> 
+<div class="phase-sub">End-to-end thesis defense preparation and long-term confidence architecture</div> 
+</div> 
+<div class="phase-sess-count">Sessions 16–19</div> 
+</div> 
+<div class="sessions-grid"> ``` <!-- S16 --> 
+<div class="s-card" data-session="16" style="animation-delay:0.05s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 16</span> 
+<span class="sess-tag tag-thesis">Thesis Prep</span> 
+</div> 
+<div class="card-title">Defense Day: Language &amp; Structure</div> 
+<div class="card-focus">Master the specific language of a thesis defense — how to present, explain, and defend original research to an expert panel.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> <div class="card-detail"> 
+<div class="detail-inner"> <div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Anatomy of a defense: opening statement, chapter overview, original contribution, conclusions</span></div> 
+<div class="tl-item"><span class="tl-time">25'</span><span class="tl-text">Key phrases for defending methodology ("I chose this approach because…") and findings ("What this suggests is…")</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Practice: 5-minute verbal thesis overview — no notes, conversational tone</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Build a written phrase bank to review before your actual defense</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Defense structure</span> <span class="skill-tag">Research language</span> 
+<span class="skill-tag">Verbal confidence</span> <span class="skill-tag">Academic register</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 16)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S17 --> 
+<div class="s-card" data-session="17" style="animation-delay:0.10s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> <span class="sess-num">Session 17</span> 
+<span class="sess-tag tag-thesis">Thesis Prep</span> </div> <div class="card-title">Handling the Hard Questions</div> 
+<div class="card-focus">Prepare for the toughest examiner questions — limitations, methodology critique, contradictions, and "what would you do differently?" moments.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">The most common hard questions in Masters vivas — and the reason examiners ask them (it's not to trick you)</span></div> 
+<div class="tl-item"><span class="tl-time">30'</span><span class="tl-text">Hot seat: tutor plays examiner — progressively increasing difficulty, student defends under time pressure</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Debrief: what to do when you genuinely don't know — and how to say so without losing credibility</span></div> 
+<div class="tl-item"><span class="tl-time">5'</span><span class="tl-text">Build a personal "uncertainty toolkit" — your go-to phrases for the hardest moments</span></div> </div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Examination language</span> 
+<span class="skill-tag">Resilience</span> <span class="skill-tag">Critical response</span> 
+<span class="skill-tag">Intellectual honesty</span> </div> <button class="mark-done-btn" onclick="markDone(this, 17)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S18 --> 
+<div class="s-card" data-session="18" style="animation-delay:0.15s"> 
+<div class="card-top"> <div class="card-meta-row"> 
+<span class="sess-num">Session 18</span> 
+<span class="sess-tag tag-integration">Full Simulation</span> 
+</div> 
+<div class="card-title">Full Simulation Day</div> 
+<div class="card-focus">Everything in one session — seminar, networking, supervisor meeting, presentation Q&A. Back to back. No breaks between scenarios.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> 
+</button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Scenario A: Contribute meaningfully to a seminar discussion on a given topic</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Scenario B: Network at a departmental welcome event — approach someone, sustain, exit</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Scenario C: Supervisor progress meeting — report, flag a problem, ask for something</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Full debrief: overall performance across all 4 contexts, final focus areas for Session 19</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Integration</span> 
+<span class="skill-tag">Context-switching</span> 
+<span class="skill-tag">Cognitive stamina</span> 
+<span class="skill-tag">Performance under pressure</span> 
+</div> <button class="mark-done-btn" onclick="markDone(this, 18)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+<!-- S19 --> 
+<div class="s-card" data-session="19" style="animation-delay:0.20s"> 
+<div class="card-top"> 
+<div class="card-meta-row"> 
+<span class="sess-num">Session 19</span> 
+<span class="sess-tag tag-graduation">Graduation</span> 
+</div> 
+<div class="card-title">You're Ready. Now What?</div> 
+<div class="card-focus">Celebrate how far you've come. Consolidate what you've learned. And build a personal plan for continuing your growth once you're in Australia.</div> 
+</div> 
+<button class="card-toggle" onclick="toggleCard(this)"> 
+<span>View lesson plan</span><span class="toggle-arrow">▼</span> </button> 
+<div class="card-detail"> 
+<div class="detail-inner"> 
+<div class="timeline"> <div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Final self-introduction — compare it side by side with your Session 01 recording</span></div> 
+<div class="tl-item"><span class="tl-time">20'</span><span class="tl-text">Open reflection conversation: what changed? What still feels hard? What surprised you most?</span></div> 
+<div class="tl-item"><span class="tl-time">15'</span><span class="tl-text">Build your personal English Maintenance Plan — habits, resources, and goals for your first semester</span></div> 
+<div class="tl-item"><span class="tl-time">10'</span><span class="tl-text">Celebration conversation + handover of your personal phrase bank and resource list</span></div> 
+</div> 
+<div class="skill-tags"> 
+<span class="skill-tag">Reflection</span> 
+<span class="skill-tag">Self-direction</span> 
+<span class="skill-tag">Long-term planning</span> 
+<span class="skill-tag">Confidence</span> 
+</div> 
+<button class="mark-done-btn" onclick="markDone(this, 19)">Mark as completed</button> 
+</div> 
+</div> 
+</div> 
+</div> ``` </div> </main> 
+<!-- TUTOR NOTE --> 
+<div class="tutor-note"> 
+<div class="tn-icon">📌</div> <div class="tn-body"> 
+<div class="tn-title">A note for every session</div> 
+<div class="tn-text"> Each session ends with one question for you: <strong>"What is one thing you want to try this week?"</strong> — spoken out loud, not written. This builds the metacognitive habit that separates B2 students who plateau from those who reach C1. Session 10 is a deliberate pivot point: use it freely to adjust, drop, or extend any topic based on what's actually emerged. Use real Australian university contexts wherever possible — ANU, Melbourne, Monash, UQ. The more specific the roleplay, the more useful it is. </div> 
+</div> 
+</div> 
+<!-- FOOTER --> 
+<footer class="site-footer"> 
+<div class="footer-credit"> Made for <strong>one student</strong>, preparing for something big. Good luck. 🇦🇺 </div> 
+<button class="reset-btn" onclick="resetProgress()">Reset progress</button> 
+</footer> 
+<script> 
+
+// ── PROGRESS TRACKING ───────────────────────────────── 
+const STORAGE_KEY = 'mastersPrep_done'; 
+function getDone() {
+try { 
+return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; 
+} 
+
+catch { 
+return []; 
+} 
+} 
+
+function saveDone(arr) { 
+localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); 
+} 
+function updateProgressUI() { 
+const done = getDone(); 
+const count = done.length; 
+const pct = Math.round((count / 19) * 100); 
+document.getElementById('progressBar').style.width = pct + '%'; 
+document.getElementById('progress-text').textContent = count + ' / 19'; 
+// Apply done state to all cards document.querySelectorAll('.s-card').forEach(card => { 
+const sn = parseInt(card.dataset.session); 
+const btn = card.querySelector('.mark-done-btn'); 
+if (done.includes(sn)) { 
+card.classList.add('done'); 
+if (btn) { 
+btn.textContent = '✓ Completed'; 
+btn.classList.add('done-state'); 
+} 
+} 
+
+else { 
+card.classList.remove('done'); 
+if (btn) { 
+btn.textContent = 'Mark as completed'; 
+btn.classList.remove('done-state'); 
+} 
+} 
+}); 
+} 
+
+function markDone(btn, sessionNum) { 
+const done = getDone(); 
+if (done.includes(sessionNum)) { 
+const idx = done.indexOf(sessionNum); 
+done.splice(idx, 1); 
+} 
+else { 
+done.push(sessionNum); 
+} 
+saveDone(done); 
+updateProgressUI(); 
+} 
+
+// ── CARD TOGGLE ─────────────────────────────────────── 
+function toggleCard(btn) { 
+const detail = btn.nextElementSibling; 
+const isOpen = detail.classList.contains('open'); 
+btn.classList.toggle('open', !isOpen); 
+detail.classList.toggle('open', !isOpen); 
+btn.querySelector('span:first-child').textContent = isOpen ? 'View lesson plan' : 'Hide lesson plan'; 
+} 
+
+// ── PHASE FILTER ────────────────────────────────────── 
+document.getElementById('phaseNav').addEventListener('click', function(e) { 
+const btn = e.target.closest('.phase-btn'); 
+if (!btn) return; 
+document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active')); 
+btn.classList.add('active'); 
+const phase = btn.dataset.phase; 
+document.querySelectorAll('.phase-block').forEach(block => { 
+if (phase === 'all' || block.dataset.phase === phase) { 
+block.classList.remove('hidden'); 
+} 
+else { 
+block.classList.add('hidden'); 
+} 
+}); 
+}); 
+
+// ── RESET ───────────────────────────────────────────── 
+function resetProgress() { 
+if (confirm('Reset all session progress?')) { 
+localStorage.removeItem(STORAGE_KEY); 
+updateProgressUI(); 
+} 
+} 
+
+// ── INIT ────────────────────────────────────────────── 
+updateProgressUI(); 
+</script> 
+</body> 
+</html>
